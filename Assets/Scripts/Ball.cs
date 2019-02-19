@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float launchSpeed;
+    [SerializeField] private Vector3 launchVeclocity;
     [SerializeField] private AudioSource audioSource;
     private Rigidbody _rigidbody;
 
@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour
 
     public void Launch()
     {
-        _rigidbody.velocity = new Vector3(0, 0, launchSpeed);
+        _rigidbody.velocity = launchVeclocity;
         audioSource.Play();
     }
 
